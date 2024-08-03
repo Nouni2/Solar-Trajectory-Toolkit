@@ -4,6 +4,9 @@
 
 This MATLAB project aims to calculate the position of the sun in the sky based on the observer's geographic location and time, with user-defined accuracy. It calculates key solar parameters such as solar declination, azimuth, and elevation, and determines important solar events like sunrise and sunset times. The project provides a comprehensive tool for analyzing the sun's trajectory and its apparent motion throughout the year.
 
+![sunrise-sunset](https://github.com/user-attachments/assets/69a0a6e1-9bda-4aa5-9e74-0eccc7d87921)
+
+
 ## General Definitions
 
 - **Latitude**: The latitude of an observer is the angle between the equatorial plane and the direction of the vertical at a given point on the Earth's surface. It is measured in degrees or radians, ranging from $-90^\circ$ (south) to $90^\circ$ (north).
@@ -154,6 +157,8 @@ ylabel('Solar Elevation (h) in degrees');
 title('Solar Elevation Over Time');
 grid on;
 ```
+![sun_position](https://github.com/user-attachments/assets/5a94e95e-8e70-4791-b287-dc4e47fb5694)
+
 
 ### Finding Solar Events
 
@@ -215,22 +220,9 @@ for day = 1:10
     fprintf('\n'); % New line to separate days
 end
 ```
+![day_length](https://github.com/user-attachments/assets/a441875f-0ea7-4a65-beae-80fd348e8b2c)
 
-### Plotting Azimuth
 
-```matlab
-% Plot azimuth as a function of time
-figure('Position',[1000 100 1500 1000])
-plot(t, rad2deg(alpha), 'LineWidth', 2);
-yline(0, 'LineWidth', 2);
-xticks(month_idx);
-xticklabels(months);
-xlabel('Months');
-xlim([0 365]);
-ylabel('Azimuth (\alpha) in degrees');
-title('Solar Azimuth Over Time');
-grid on;
-```
 
 **Acknowledgment:** This project utilized ChatGPT to help organize the code and improve documentation.
 
