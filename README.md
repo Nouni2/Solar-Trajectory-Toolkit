@@ -232,45 +232,6 @@ title('Solar Azimuth Over Time');
 grid on;
 ```
 
-## Analemma Plotting
-
-The analemma is the figure-eight pattern created by the sun's position at the same time each day over a year.
-
-### MATLAB Code Snippet for Analemma
-
-```matlab
-% Fixed time in UTC for analemma calculation
-fixed_hour_utc = 14;
-
-% Calculate indices for 14h UTC
-% Find the index for 14h each day
-% In MATLAB, indexing starts at 1, so for t=0 (midnight), the index is 1
-% For 14h (or 14 * 60 minutes after midnight), the index is:
-index_fixed_hour_per_day = 14 * 60 / p + 1;
-
-% Calculate the fixed hour index for each day
-indices_fixed_hour = index_fixed_hour_per_day:points_per_day:length(t);
-
-% Extract azimuth and elevation values for the fixed hour
-azimuth_analemma = alpha(indices_fixed_hour);
-elevation_analemma = h(indices_fixed_hour);
-
-% Convert to degrees
-azimuth_analemma_deg = rad2deg(azimuth_analemma);
-elevation_analemma_deg = rad2deg(elevation_analemma);
-
-% Plot the analemma
-figure;
-scatter(azimuth_analemma_deg, elevation_analemma_deg, 'b.');
-xlabel('Azimuth (°)');
-ylabel('Elevation (°)');
-title('Analemma of the Sun at 14h UTC');
-grid on;
-
-% Save the figure if desired
-saveas(gcf, 'analemma.png');
-```
-
 **Acknowledgment:** This project utilized ChatGPT to help organize the code and improve documentation.
-```
+
 
